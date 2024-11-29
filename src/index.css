@@ -4,6 +4,97 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: "Inter", sans-serif;
+
+.bgimage {
+  background-image: url('./assets/mountains-2.png');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  
+  width: 100%;   /* Ensures the background covers the full width */
 }
+@media (max-width: 768px) {
+  .bgimage {
+    background-size: contain; /* Scales the image to fit within the container */
+    background-position: bottom; /* Centers the image */
+  }
+
+  .bgplanet {
+    background-size: contain; /* Scales the image to fit within the container */
+    background-position: center; /* Centers the image */
+  }
+}
+.sendbtn {
+  background-color: #D082C2;
+}
+.bgplanet {
+
+  background-image: url('./assets/planets.png');
+  background-position: bottom;
+  background-size: cover;
+  width: 100%;
+}
+/* :root {
+  font-family: "Inter", sans-serif
+  scroll-behavior: smooth;
+} */
+
+/* #socilnet {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+} */
+
+/* .container {
+  overflow-y: auto;
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* body, html {
+  min-height: 100vh;
+} */
+
+
+
+#progress {
+  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 999;
+}
+
+#progress-value {
+  display: block;
+  height: 45px;
+  width: 45px;
+  background-color: #0A0A0A;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #4338ca;
+
+}
+
+/* canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #000;
+} */

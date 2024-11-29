@@ -11,13 +11,13 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="mb-20 flex items-center justify-between">
+    <nav className="backdrop-blur-xl py-4 mb-20 flex items-center justify-between">
         <div className="flex flex-shrink-0 items-center">
             <img className='mx-8 w-28' src={logo} alt="logo"/>
         </div>
         
-        <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-        <button type="button" className="text-indigo-500 hover:text-white border border-indigo-500 hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-indigo-700 dark:text-indigo-500 dark:hover:text-white dark:hover:bg-indigo-500 dark:focus:ring-indigo-800">Resume</button>
+        <div className="mx-8 flex items-center justify-center gap-4 text-2xl">
+            <a href="public\resume.pdf" download="Shehan_Indrajith_Resume.pdf" className="text-indigo-500 hover:text-white border border-indigo-500 hover:bg-indigo-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-indigo-700 dark:text-indigo-500 dark:hover:text-white dark:hover:bg-indigo-500 dark:focus:ring-indigo-800">Resume</a>
             <FaLinkedin className="mb-2 cursor-pointer transition-transform duration-200 hover:scale-110" 
             onClick={() => handleClick('https://www.linkedin.com/in/shehan-indrajith-47b512216/')}/>
 

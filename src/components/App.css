@@ -1,0 +1,42 @@
+/* Add this to your App.css or a similar CSS file */
+@keyframes float {
+    0% {
+      transform: translateY(0px) translateX(0px);
+    }
+    100% {
+      transform: translateY(-100vh) translateX(50px);
+    }
+  }
+  
+  .stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Makes the stars unclickable */
+    z-index: -1; /* Ensures stars are in the background */
+  }
+  
+  .star {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float linear infinite;
+  }
+  
+  .star:nth-child(odd) {
+    animation-duration: 12s;
+  }
+  
+  .star:nth-child(even) {
+    animation-duration: 18s;
+  }
+  
+  #cursor {
+    height:15px;
+    color: brown;
+  }
