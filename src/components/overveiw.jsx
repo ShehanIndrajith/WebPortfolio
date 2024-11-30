@@ -2,7 +2,7 @@ import React from 'react'
 
 function overveiw() {
   return (
-    <div className='flex flex-row bg-indigo-700 justify-center px-8 py-6'>
+    <div className='flex flex-row bg-gradient-to-r from-indigo-600 to-violet justify-center px-8 py-6'>
         <div className='flex flex-col basis-1/3 justify-center items-center'>
             <span className='block text-4xl font-bold'>04</span>
             <h1 className='text-2xl'>Projects</h1>

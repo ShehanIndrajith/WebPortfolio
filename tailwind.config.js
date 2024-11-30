@@ -23,7 +23,9 @@ module.exports = {
     extend: {
       colors: {
         'scrollbar-thumb': '#4A5568', // Customize the thumb color
-        'scrollbar-track': '#0f172a'
+        'scrollbar-track': '#0f172a',
+        'glassindigo' : '#4f46e5',
+        'violet': '#B975B5'
       },
     },
   },

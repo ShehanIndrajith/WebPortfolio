@@ -31,8 +31,11 @@ const SocialIcon = ({ Icon, url }) => {
   };
 function socialapps() {
   return (
-    <div
-    className='flex flex-col rounded-full items-center justify-center px-4 space-y-2 backdrop-blur-sm bg-white/5 w-12 h-64 mx-auto fixed top-16 transition-transform duration-500 '>
+    <motion.div animate={{
+      x: [0, -600, 0],
+      transition: { ease: ["easeIn", "easeOut"] }
+    }}
+    className='flex flex-col rounded-full items-center justify-center px-4 space-y-2 backdrop-blur-sm bg-black/5 hover:bg-white/5 w-12 h-64 mx-auto fixed top-16 transition-transform duration-500 '>
       <SocialIcon
         Icon={FaFacebookSquare}
         url="https://www.facebook.com/profile.php?id=100090037665318"
@@ -45,7 +48,7 @@ function socialapps() {
       />
       <SocialIcon Icon={AiFillTikTok} url="https://www.tiktok.com/@shehan.indrajith?_r=1&_d=ef75digm9ml58h&sec_uid=MS4wLjABAAAABun1eLGsQD8dr9bSKd7ixRgOE33HWO4ocv_MUR9pFOOYl4W8X2a0sjPVVlEzSlqu&share_author_id=7299060582195512338&sharer_language=en&source=h5_m&u_code=eb1cmdm0ke89e4&ug_btm=b8727,b0&social_share_type=4&utm_source=copy&sec_user_id=MS4wLjABAAAABun1eLGsQD8dr9bSKd7ixRgOE33HWO4ocv_MUR9pFOOYl4W8X2a0sjPVVlEzSlqu&tt_from=copy&utm_medium=ios&utm_campaign=client_share&enable_checksum=1&user_id=7299060582195512338&share_link_id=7AA0B1C7-3CE2-49EA-B2B1-F3AB4CE56CDC&share_app_id=1233" />
       <SocialIcon Icon={FaYoutube} url="https://www.youtube.com/@shehanindrajith971" />
-    </div>
+    </motion.div>
   );
 }
 

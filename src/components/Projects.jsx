@@ -1,6 +1,8 @@
 import React from "react";
 import {PROJECTS} from '../constants';
 import projpic from "../assets/about.jpg";
+import { motion } from "framer-motion";
+
 
 const Projects = () => {
   return (
@@ -8,7 +10,7 @@ const Projects = () => {
       <h2 className="my-20 text-center text-4xl">Projects</h2>
       <div className="flex flex-row flex-wrap justify-center">
         {PROJECTS.map((projects, index) => (
-          <div key={index} className="flex flex-col sm:mr-0 md:mr-6 lg:mr-6 mb-6 max-w-sm h-fit backdrop-blur-sm bg-white/5 border-gray-200 rounded-lg shadow backdrop-blur-sm dark:border-gray-700">
+          <motion.div whileHover={{y: -8}} key={index} className="flex flex-col sm:mr-0 md:mr-6 lg:mr-6 mb-6 max-w-sm h-fit backdrop-blur-sm hover:bg-glassindigo/20 bg-white/5 border-gray-200 rounded-lg shadow backdrop-blur-sm dark:border-gray-700">
           <div className="flex h-56">
             <img className="object-cover rounded-t-lg" src={projects.image} alt="" />
           </div>
@@ -44,7 +46,7 @@ const Projects = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </motion.div>
         ))}
         
 

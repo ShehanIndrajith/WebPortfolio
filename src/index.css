@@ -1,27 +1,158 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Orbitron:wght@400..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+.conactme {
+
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+
+  
+}
+
+.resumeBtn {
+  border-color: #B975B5;
+  color: #B975B5;
+}
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 400 to 900 */
+
+.orbitron-Herotxt {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-mono-medium-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+h1{
+  font-family: sans-serif;
+}
 
 .bgimage {
-  background-image: url('./assets/mountains-2.png');
+  background-image: url('./assets/mountains.png');
   background-size: cover;
   background-position: bottom;
-  background-repeat: no-repeat;
-  
+  /* background-repeat: no-repeat; */
+  position: absolute;
+  height: 100%;
   width: 100%;   /* Ensures the background covers the full width */
 }
 @media (max-width: 768px) {
   .bgimage {
-    background-size: contain; /* Scales the image to fit within the container */
-    background-position: bottom; /* Centers the image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    /* background-repeat: no-repeat; */
+    position: absolute; /* Ensures the background covers the full width */
   }
 
   .bgplanet {
-    background-size: contain; /* Scales the image to fit within the container */
-    background-position: center; /* Centers the image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    /* background-repeat: no-repeat; */
+    
   }
 }
 .sendbtn {
@@ -30,14 +161,18 @@
 .bgplanet {
 
   background-image: url('./assets/planets.png');
-  background-position: bottom;
   background-size: cover;
+  background-position: bottom;
+  /* background-repeat: no-repeat; */
+  position: absolute;
+  height: 100%;
   width: 100%;
 }
-/* :root {
-  font-family: "Inter", sans-serif
+
+:root {
+  
   scroll-behavior: smooth;
-} */
+}
 
 /* #socilnet {
   position: fixed;

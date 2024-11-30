@@ -1,13 +1,14 @@
 import React from "react";
 import Certificate from "../assets/2.jpg";
+import { motion } from "framer-motion";
 
 function Certifications() {
   return (
-    <div className=" border-neutral-800 pb-8 mb-24">
+    <div className=" border-neutral-800 pb-8">
       <h2 className="my-20 text-center text-4xl">Certifications</h2>
       <div className="flex flex-row flex-wrap justify-center px-6">
         {/* card */}
-        <div className="flex flex-col rounded-lg sm:max-w-full md:max-w-full lg:max-w-xl sm:mr-auto md:mr-auto lg:mr-6 mb-4 backdrop-blur-md bg-white/5">
+        <motion.div whileHover={{y: -8}} className="flex flex-col rounded-lg sm:max-w-full md:max-w-full lg:max-w-xl sm:mr-auto md:mr-auto lg:mr-6 mb-4 backdrop-blur-sm bg-white/5 hover:bg-glassindigo/20">
           <div>
             <img className="rounded-lg" src={Certificate} />
           </div>
@@ -25,7 +26,7 @@ function Certifications() {
               <button className="rounded px-4 py-1 bg-indigo-600">View</button>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* card End */}
 
         {/* card Start */}

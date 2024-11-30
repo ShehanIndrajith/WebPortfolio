@@ -1,9 +1,12 @@
 import React from 'react'
 import {EDUCATION} from '../constants';
+//import { motion } from "framer-motion";
 
 const Education = () => {
+
+    
   return (
-    <div className='flex flex-col justify-center border-b bg-indigo-700 border-neutral-800 pb-24'>
+    <div className='flex flex-col justify-center border-b bg-gradient-to-r from-indigo-600 to-violet border-neutral-800 pb-48'>
         <h2 className='my-20 text-center text-4xl'>Education</h2>
         <div className='flex flex-col justify-center'>
             {EDUCATION.map((education, index) => (

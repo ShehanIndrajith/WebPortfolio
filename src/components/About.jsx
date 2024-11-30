@@ -1,111 +1,116 @@
 import React from "react";
 import aboutImg from "../assets/123.jpg";
-import { ABOUT_TEXT } from "../constants";
-import { SlArrowRight } from "react-icons/sl";
+import whatsapp from "../assets/whatsapplogo.png";
+import gmail from "../assets/gmail.png";
+import { toast,ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {motion} from 'framer-motion';
+
 
 const About = () => {
+
+  const numbercopyToClipboard = () => {
+    const phoneNumber = "+94701942929"; // the phone number you want to copy
+    navigator.clipboard.writeText(phoneNumber)
+      .then(() => {
+        toast.success('Phone number copied to clipboard!', {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          className: 'bg-green-800 bg-opacity-50 text-white text-sm',
+        });
+      })
+      .catch((error) => {
+        console.error('Failed to copy text: ', error);
+      });
+  };
+
+  const emailcopytoClipboard = () => {
+    const emailAddress = "sbsindrajith2002@gmail.com";
+    navigator.clipboard.writeText(emailAddress)
+    .then(() => {
+      toast.success('Email Address copied to clipboard!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        className: 'bg-green-800 bg-opacity-50 text-white text-sm',
+      });
+    })
+    .catch((error) => {
+      console.error('Failed to copy text: ', error);
+    });
+  };
+
   return (
-    <div className="border-b border-neutral-900 px-20 pb-4 mb-30 lg:mb-30">
-      <h2 className="my-12 text-center text-4xl">
+    <div className=" border-neutral-900 px-6 lg:px-20 py-16 mb-30 lg:mb-30">
+      <h2 className="mb-12 text-center text-4xl">
         About
         <span className="text-neutral-500">Me</span>
       </h2>
-      <div className="flex flex-col lg:flex-row rounded-lg p-8 py-6 sm:py-6 md:py-6 lg:py-16 backdrop-blur-sm bg-white/5">
-        <div className="flex flex-col items-center lg:flex-col sm:w-full lg:w-96">
-          {/* Image Section */}
-          <div className="size-80 mb-6">
-            <img className="rounded-lg w-full" src={aboutImg} alt="About" />
-          </div>
-
-          {/* Info Section */}
-          <div className="flex flex-col sm:items-center lg:items-start">
-            <label className="font-serif w-full text-2xl sm:text-3xl md:text-4xl lg:text-3xl text-center lg:text-left">
-              Hey! I am Shehan Indrajith
-            </label>
-            <div className="px-4 mt-4 space-y-4">
-              <div className="flex flex-row">
-                <SlArrowRight className="fill-indigo-500 mr-4 mt-1" />
-                <label className="font-bold">Birthday: </label>
-                <span className='ml-4'> 28th October 2002</span>
-              </div>
-              <div className="flex flex-row">
-                <SlArrowRight className="fill-indigo-500 mr-4 mt-1" />
-                <label className="font-bold">Email: </label>
-                <span className='ml-4'> sbsindrajith2002@gmail.com</span>
-              </div>
-              <div className="flex flex-row">
-                <SlArrowRight className="fill-indigo-500 mr-4 mt-1" />
-                <label className="font-bold">Phone No: </label>
-                <span className='ml-4'> +94 76 185 5356</span>
-              </div>
-              <div className="flex flex-row">
-                <SlArrowRight className="fill-indigo-500 mr-4 mt-1" />
-                <label className="font-bold">City: </label>
-                <span className='ml-4'> Ambalangoda</span>
-              </div>
-            </div>
-            <div className="px-6 mt-6">
-              <button className="rounded-md bg-indigo-600 px-4 py-2 text-sm">
-                Connect
-              </button>
-            </div>
+      <div className="flex flex-col lg:flex-row rounded-lg backdrop-blur-sm bg-white/5 mx-0 p-8 lg:mx-36 lg:p-16">
+        <div className="basis-1/3">
+          <div className="w-full h-80">
+            <img className="rounded-lg" src={aboutImg} />
           </div>
         </div>
-
-
-      <div className='sm:px-0 md:px-0 lg:px-6'>
-        {/* Bio Section */}
-        <div className="mt-6 flex flex-col items-center lg:items-center">
-          <h2 className="border-y-2 border-indigo-600 w-full text-2xl mb-4 text-center lg:text-center">Biography</h2>
-          <p className="text-justify mb-6 font-serif lg:text-justify">
-            I am a highly motivated and creative second-year Software
-            Engineering student with a strong passion for technology and
-            innovation. My journey in tech focuses on back-end development,
-            cloud engineering, and exploring the limitless potential of Machine
-            Learning and Data Science.
-            <br />
-            I thrive on solving complex problems, building scalable
-            applications, and continuously learning about cutting-edge
-            technologies. Beyond academics, my diverse background in music and
-            sports has instilled in me creativity, discipline, and a
-            collaborative mindset—qualities that I bring to every project.
-            <br />
-            With hands-on experience in web development, IoT systems, and
-            automated solutions, I’m eager to take on challenges that contribute
-            to impactful, real-world solutions while advancing my skills in the
-            dynamic tech field.
-          </p>
-        </div>
-
-        {/* Areas of Interest Section */}
-        <div className="mt-6 flex flex-col items-center lg:items-center">
-          <h2 className="border-y-2 border-indigo-600 w-full text-2xl mb-4 text-center lg:text-center">
-            Areas of Interest
-          </h2>
-          <p className="text-justify font-serif lg:text-justify">
-            I am deeply passionate about the world of technology, particularly
-            Deep Learning, Data Science, and Machine Learning. The ability of
-            neural networks to mimic human intelligence fascinates me, and I’m
-            eager to explore their applications in computer vision, natural
-            language processing, and beyond. My interest in Data Science lies in
-            uncovering meaningful insights from complex datasets and applying
-            predictive analytics to solve real-world problems. Additionally, I
-            am captivated by the theoretical aspects of Machine Learning,
-            delving into the mathematical foundations and algorithms that power
-            these advancements. With an emerging interest in Robotics, I am
-            enthusiastic about understanding automation and building systems
-            that integrate seamlessly into our daily lives.
-            <br />
-            Beyond my technical pursuits, I am also a lifelong learner, with a
-            curiosity that extends to Finance, Economics, and Politics. These
-            fields inspire me to think critically about the interconnected
-            systems shaping our world and their potential for innovation through
-            technology. Combining my technical knowledge and broader interests,
-            I aim to create solutions that have a meaningful impact on society.
-          </p>
+        <div className="basis-2/3 pl-0 lg:pl-16">
+          <div className='mt-2 sm:mt-2 md:lg-4 lg:mt-0'>
+            <h1 className="font-serif text-center lg:text-left text-2xl lg:text-4xl lg:mt-0">
+              Hello! I'm Shehan Indrajith 👋
+            </h1>
+            {/* <img src={aboutImg}/> */}
+          </div >
+          <div className="mt-6">
+            <p className="font-serif text-justify">
+              I am a 22-year-old Software Engineering student passionate about
+              <label className='font-semibold border-b-2 border-indigo-500'> front-end and back-end development, cloud engineering, and Machine Learning. </label>
+              With hands-on experience in <label className='font-semibold border-b-2 border-indigo-500'> web development, IoT systems, and
+              automation</label>, I specialize in creating scalable solutions and
+              exploring AI-driven innovations like neural networks and
+              predictive analytics. Beyond tech, I channel creativity through
+              music and sports, excelling in guitar, singing, high jump, karate,
+              and badminton. A lifelong learner, I also explore Finance,
+              Economics, and Politics to broaden my perspective. I strive to
+              merge technical expertise with <label className='font-semibold border-b-2 border-indigo-500'> creativity, solving real-world
+              challenges and shaping impactful solutions </label>for the future of
+              technology.
+            </p>
+          </div>
+          <div className="flex flex-col lg:flex-row mt-6 space-x-0 lg:space-x-4">
+            <motion.div whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.99 }}
+                transition={{ type: "spring", stiffness: 300, damping: 17 }} onClick={numbercopyToClipboard} className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 mb-4 lg:mb-0 justify-start items-center hover:cursor-pointer">
+              <div className='size-12'>
+                <img src={whatsapp}/>
+              </div>
+              <div className="flex flex-col ml-4">
+                <h1 className="font-semibold">Whatsapp :</h1>
+                <h1 className="">+94 70 194 2929</h1>
+              </div>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.99 }}
+                transition={{ type: "spring", stiffness: 300, damping: 17 }} onClick={emailcopytoClipboard} className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 justify-start items-center hover:cursor-pointer">
+              <div className='size-12'>
+                <img src={gmail}/>
+              </div>
+              <div className="flex flex-col ml-4">
+                <h1 className="font-semibold">Email :</h1>
+                <h1 className="">sbsindrajith2002@gmail.com</h1>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
-      </div>
+      <ToastContainer/>
     </div>
   );
 };
