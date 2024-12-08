@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 //import {Navbar}  from "./components/Navbar"
+import { Link, Element } from 'react-scroll';
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -94,25 +95,29 @@ function App() {
   window.onload = calcScrollValue;
 
   return (
+    
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
       <div className="fixed top-0 -z-50 h-full w-full">
         <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
           <InteractiveSpider />
         </div>
       </div>
-
+      
       {/* Navigation Bar */}
       
       <div className="fixed flex flex-row w-full justify-center items-start z-50">
-      <Navpanel scrollToSection={scrollToSection}
+        <div className="hidden md:flex">
+        <Navpanel scrollToSection={scrollToSection}
           refs={{ aboutRef, educationRef, projectsRef, certificationsRef }}
           active={active}/>
+        </div>
+      
       </div>
       
       
 
       {/* Main Content */}
-      <div className="container flex flex-col mx-auto pt-16 lg:pt-40">
+      <div className="flex flex-col mx-auto pt-16 lg:pt-40">
         <Hero />
         <div ref={aboutRef}>
         <About />
@@ -130,18 +135,17 @@ function App() {
         <div ref={certificationsRef}>
         <Certifications />
         </div>
+        <Element name="contactMeSection">
+          <Contact />
+        </Element>
         
-        <Contact />
       </div>
 
-
+      
      
 
       {/* Scroll Progress */}
-      <motion.div whileHover={{y:-8}} animate={{
-    x: [0, 100, 0],
-    transition: { ease: ["easeIn", "easeOut"] }
-  }} id="progress">
+      <motion.div whileHover={{y:-8}} initial={{ x: 10, opacity: 0 }} animate={{ x: 1, opacity: 1 }} exit={{ x: 20 , duration: 5 }}  id="progress">
         <span id="progress-value">
           <FiArrowUp className="size-8" />
         </span>

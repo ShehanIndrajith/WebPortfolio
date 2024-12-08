@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const Projects = () => {
   return (
     <div className="border-b border-neutral-800 px-8 pb-24">
-      <h2 className="my-20 text-center text-4xl">Projects</h2>
-      <div className="flex flex-row flex-wrap justify-center">
+      <h2 className="my-20 text-white text-center text-4xl">Projects</h2>
+      <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className="flex flex-row flex-wrap justify-center">
         {PROJECTS.map((projects, index) => (
           <motion.div whileHover={{y: -8}} key={index} className="flex flex-col sm:mr-0 md:mr-6 lg:mr-6 mb-6 max-w-sm h-fit backdrop-blur-sm hover:bg-glassindigo/20 bg-white/5 border-gray-200 rounded-lg shadow backdrop-blur-sm dark:border-gray-700">
           <div className="flex h-56">
@@ -31,10 +31,10 @@ const Projects = () => {
               
             </div>
             <a
-              href="#"
+              href={projects.github}
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
-              Read more
+              Github
               <svg
                 className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                 aria-hidden="true"
@@ -51,7 +51,7 @@ const Projects = () => {
         
 
         
-      </div>
+      </motion.div>
     </div>
   );
 };

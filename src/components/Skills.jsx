@@ -15,9 +15,9 @@ import mysql from '../assets/mysql.png';
 const Skills = () => {
   return (
     <div className='pt-8 pb-28'>
-        <h2 className="mb-20 text-center text-4xl">Skills</h2>
+        <h2 className="mb-20 text-white text-center text-4xl">Skills</h2>
 
-        <div className='flex flex-wrap items-center justify-center gap-4'>
+        <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1,  delay:0.5 }} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className='flex flex-wrap items-center justify-center gap-4'>
           <motion.div
           whileHover={{y: -8}} transition={{ type: "spring" }} className='rounded-2xl border-4 border-neutral-800 p-2'>
             <RiReactjsLine className='text-5xl text-cyan-400'/>
@@ -43,7 +43,7 @@ const Skills = () => {
           <motion.div whileHover={{y: -8}} transition={{ type: "spring" }} className='rounded-2xl border-4 border-neutral-800 p-2'>
             <BiLogoPostgresql className='text-5xl text-sky-700'/>
           </motion.div>
-        </div>
+        </motion.div>
 
     </div>
   )

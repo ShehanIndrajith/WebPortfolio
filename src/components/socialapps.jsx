@@ -21,7 +21,7 @@ const SocialIcon = ({ Icon, url }) => {
         className="flex justify-center items-center" // Added margin between icons
         onClick={handleClick}
       >
-        <Icon className="size-8 hover:text-indigo-600 transition-colors text-gray-200 hover:cursor-pointer" />
+        <Icon className="size-8 hover:text-violet transition-colors text-gray-200 hover:cursor-pointer" />
       </motion.div>
     );
   };
@@ -31,10 +31,7 @@ const SocialIcon = ({ Icon, url }) => {
   };
 function socialapps() {
   return (
-    <motion.div animate={{
-      x: [0, -600, 0],
-      transition: { ease: ["easeIn", "easeOut"] }
-    }}
+    <motion.div initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1,  delay:0.5 }} transition={{ duration: 0.5, ease: "easeInOut" }}  viewport={{ once: true }}
     className='flex flex-col rounded-full items-center justify-center px-4 space-y-2 backdrop-blur-sm bg-black/5 hover:bg-white/5 w-12 h-64 mx-auto fixed top-16 transition-transform duration-500 '>
       <SocialIcon
         Icon={FaFacebookSquare}

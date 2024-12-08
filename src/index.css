@@ -129,6 +129,13 @@ h1{
   font-family: sans-serif;
 }
 
+mark {
+  background-color: #4F46E5;
+  border-radius: 2px;
+  color: #fff;
+
+}
+
 .bgimage {
   background-image: url('./assets/mountains.png');
   background-size: cover;

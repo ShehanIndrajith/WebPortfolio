@@ -1,9 +1,10 @@
 //import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/123.jpg";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import profilePic from "../assets/myphotos/heropic1.jpg";
+import { useTypewriter } from "react-simple-typewriter";
 import "./App.css";
 import { motion } from "framer-motion";
 import { MdOutlineFileDownload } from "react-icons/md";
+import { Link } from 'react-scroll';
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -20,12 +21,14 @@ const Hero = () => {
     delaySpeed: 1000, // Delay before typing the next word
   });
 
+
+
   return (
-    <div className="border-b border-neutral-900 mx-8 lg:mx-12 pb-4 lg:mb-35">
-      <div className="lg:ml-10 flex flex-wrap justify-center lg:justify-center">
-        <div className="w-full lg:w-1/2">
+    <div className="border-b border-neutral-900 mx-8 lg:mx-8 pb-4 lg:mb-35">
+      <div  className="lg:ml-10 flex flex-wrap justify-center lg:justify-center">
+        <motion.div initial={{ x: -30, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
-            <h1 className="pb-4 orbitron-Herotxt font-thin tracking-tight text-4xl sm:text-4xl md:text-6xl lg:mt-8 lg:text-8xl text-center lg:text-left">
+            <h1 className="pb-4 orbitron-Herotxt font-thin tracking-tight text-5xl sm:text-5xl md:text-6xl lg:mt-8 text-white lg:text-8xl text-center lg:text-left">
               SHEHAN INDRAJITH
             </h1>
             {/* <h1 className='pb-10 ibm-plex-mono-extralight tracking-tight lg:text-6xl'>Web Developer /</h1> */}
@@ -36,37 +39,41 @@ const Hero = () => {
                 </label>{" "}
                 {text}
               </span>
-              <Cursor />
+              
             </div>
             <div className="flex flex-row w-full mt-8 lg:mt-12 space-x-6 justify-center lg:justify-start mb-4">
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="bg-indigo-600 rounded-lg py-3 px-5 hover:cursor-pointer"
+                className="bg-indigo-600 rounded-lg px-3 text-sm py-1 lg:py-3 lg:px-5 hover:cursor-pointer flex flex-row items-center"
               >
-                <a className="font-semibold">Contact Me</a>
+                <Link to="contactMeSection"
+        smooth={true}
+        duration={500} className="font-semibold text-sm lg:text-md text-white text-center">Contact Me</Link>
               </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="border border-violet font-semibold text-violet flex flex-row items-center rounded-lg py-3 px-5 bg-black/5 backdrop-blur-sm space-x-4 hover:cursor-pointer hover:bg-violet hover:text-white"
+                className="border border-violet font-semibold text-violet flex flex-row items-center rounded-lg px-3 py-1 lg:py-3 lg:px-5 bg-black/5 backdrop-blur-sm space-x-4 hover:cursor-pointer hover:bg-violet hover:text-white"
               >
-                <a
-                  href="public\resume.pdf"
-                  download="Shehan_Indrajith_Resume.pdf"
-                  className=""
+                <button
+                  onClick={() => {
+                    window.location.href = "https://drive.google.com/uc?export=download&id=1i2avnwgDhVVzK3QdMexUaTpOlumzNfM2";
+                  }}
+                  alt="Shehan_Indrajith_Resume.pdf"
+                  className="text-sm lg:text-md text-center size-full"
                 >
                   Resume
-                </a>
+                </button>
                 <MdOutlineFileDownload className="text-lg size-6 " />
               </motion.div>
             </div>
           </div>
-        </div>
-        <div className="w-full lg:w-1/3 lg:p-3 lg:ml-[2cm]">
+        </motion.div>
+        <motion.div initial={{ x: 30, opacity: 0 }} whileInView={{ x: 0, opacity: 1}} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className="w-full lg:w-1/3 lg:p-3 lg:ml-[2cm]">
           <div className="flex justify-center lg:justify-end">
             <img
               className="mb-20  rounded-lg lg:ml-[10cm]"
@@ -74,7 +81,7 @@ const Hero = () => {
               alt="Shehan Indrajith"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

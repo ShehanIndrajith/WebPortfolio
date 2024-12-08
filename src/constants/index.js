@@ -1,7 +1,11 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/Library.png";
+import project2 from "../assets/projects/gymManagement.png";
+import project3 from "../assets/projects/restaurant.png";
+import project4 from "../assets/projects/smartwatering.png";
+
+import python from "../assets/certifications/pythonIntro.jpeg";
+import dsa from "../assets/certifications/dsa.png";
+import postman from "../assets/certifications/postman-certification.png"
 
 export const HERO_CONTENT = `I am a dedicated full stack developer with a strong foundation in building efficient and innovative software solutions. With hands-on experience in front-end technologies like HTML, CSS, and JavaScript, as well as back-end technologies such as Java, Spring Boot, and ASP.NET Core, I have developed a range of projects including smart IoT systems, web applications, and desktop applications. My passion for deep learning, data science, and robotics drives me to continuously explore new technologies and apply my skills to create impactful and user-centric solutions.`;
 
@@ -35,37 +39,56 @@ export const EDUCATION = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "Library Management System",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "Developed a robust Library Management System using React and PostgreSQL, featuring efficient book tracking, user management, and seamless CRUD operations with a user-friendly interface.",
+    technologies: ["React.js", "Express.js", "Node.js" ,"PostgreSQL"],
+    github: "https://github.com/ShehanIndrajith/React_LibraryManagementSystem.git",
   },
   {
-    title: "Task Management App",
+    title: "Gym Membership Management System ",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "The Gym Membership Management system, built with ASP.NET Core MVC and SQL Server, enables CRUD operations for efficient member registration and membership plan management. ",
+    technologies: ["C#", "ASP.NET core", "SQL"],
+    github: "https://github.com/ShehanIndrajith/GymManagementSystem.git",
   },
   {
-    title: "Portfolio Website",
+    title: "Restaurant Food Ordering System",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
+      "This restaurant management system allows customers to view the menu and place orders, while the admin can add, delete, and update food items. Additionally, the admin can access the order history.",
+    technologies: ["C#", "Windows Form", "SQL"],
+    github: "https://github.com/ShehanIndrajith/Restaurant_Food_Odering_System.git",
   },
   {
-    title: "Blogging Platform",
+    title: "Smart Plant Watering System",
     image: project4,
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "Developed a smart agriculture irrigation system using IoT technology to automate soil moisture monitoring and regulation, enabling real-time data access and remote control for improved plant health and efficiency. ",
+    technologies: ["Arduino", "Firebase", "Soil Moisture Sensors", "NodeMCU module"],
+    github: "https://github.com/ShehanIndrajith/PlantWateringSystem.git",
   },
 ];
 
-export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
-};
+export const CERTIFICATES = [
+  {
+    title: "Introduction to Python",
+    image: python,
+    institute: "by Sololearn",
+    date:"24/09/2023",
+  },
+  {
+    title: "Basics of Data Structures and Algorithms",
+    image: dsa,
+    institute: "by Simplilearn",
+    date: "14/07/2024",
+  },
+  {
+    title: "Postman API Fundamentals Student Expert",
+    image: postman,
+    institute: "by Postman",
+    date: "19/05/2024",
+  }
+];

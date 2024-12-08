@@ -1,78 +1,34 @@
 import React from "react";
-import Certificate from "../assets/2.jpg";
+import {CERTIFICATES} from "../constants"
 import { motion } from "framer-motion";
 
 function Certifications() {
   return (
     <div className=" border-neutral-800 pb-8">
-      <h2 className="my-20 text-center text-4xl">Certifications</h2>
-      <div className="flex flex-row flex-wrap justify-center px-6">
-        {/* card */}
-        <motion.div whileHover={{y: -8}} className="flex flex-col rounded-lg sm:max-w-full md:max-w-full lg:max-w-xl sm:mr-auto md:mr-auto lg:mr-6 mb-4 backdrop-blur-sm bg-white/5 hover:bg-glassindigo/20">
+      <h2 className="my-20 text-center text-4xl text-white">Certifications</h2>
+      <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className="flex flex-row flex-wrap justify-center px-6">
+        {CERTIFICATES.map((certificates, index) => (
+          <motion.div whileHover={{y: -8}} key={index} className="flex flex-col rounded-lg sm:max-w-full md:max-w-full lg:max-w-xl sm:mr-auto md:mr-auto lg:mr-6 mb-4 backdrop-blur-sm bg-white/5 hover:bg-glassindigo/20">
           <div>
-            <img className="rounded-lg" src={Certificate} />
+            <img className="rounded-lg" src={certificates.image} />
           </div>
           <div className='px-4 my-4 space-y-2'>
             <div>
-              <h5 className="text-2xl">Introduction to Python</h5> 
+              <h5 className="text-2xl">{certificates.title}</h5> 
             </div>
             <div>
-              <h5 className="text-xl">by SoloLearn</h5>
+              <h5 className="text-xl">{certificates.institute}</h5>
             </div>
             <div>
-              <p className="text-sm">04/05/2023</p>
+              <p className="text-sm">{certificates.date}</p>
             </div>
-            <div>
-              <button className="rounded px-4 py-1 bg-indigo-600">View</button>
-            </div>
+            
           </div>
         </motion.div>
-        {/* card End */}
 
-        {/* card Start */}
-        <div className="flex flex-col rounded-lg sm:mr-auto md:mr-auto lg:mr-6 mb-4 sm:max-w-full md:max-w-full lg:max-w-xl backdrop-blur-md bg-white/5">
-          <div>
-            <img className="rounded-lg" src={Certificate} />
-          </div>
-          <div className='px-4 my-4 space-y-2'>
-            <div>
-              <h5 className="text-2xl">Introduction to Python</h5>
-            </div>
-            <div>
-              <h5 className="text-xl">by SoloLearn</h5>
-            </div>
-            <div>
-              <p className="text-sm">04/05/2023</p>
-            </div>
-            <div>
-              <button className="rounded px-4 py-1 bg-indigo-600">View</button>
-            </div>
-          </div>
-        </div>
-        {/* card End */}
-
-        {/* card Start */}
-        <div className="flex flex-col rounded-lg sm:mr-auto md:mr-auto lg:mr-6 mb-4 sm:max-w-full md:max-w-full lg:max-w-xl backdrop-blur-md bg-white/5">
-          <div>
-            <img className="rounded-lg" src={Certificate} />
-          </div>
-          <div className='px-4 my-4 space-y-2'>
-            <div>
-              <h5 className="text-2xl">Introduction to Python</h5>
-            </div>
-            <div>
-              <h5 className="text-xl">by SoloLearn</h5>
-            </div>
-            <div>
-              <p className="text-sm">04/05/2023</p>
-            </div>
-            <div>
-              <button className="rounded px-4 py-1 bg-indigo-600">View</button>
-            </div>
-          </div>
-        </div>
-        {/* card End */}
-      </div>
+        ))}
+        
+      </motion.div>
     </div>
   );
 }

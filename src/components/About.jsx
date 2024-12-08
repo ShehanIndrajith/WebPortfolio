@@ -1,13 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import aboutImg from "../assets/123.jpg";
 import whatsapp from "../assets/whatsapplogo.png";
 import gmail from "../assets/gmail.png";
 import { toast,ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {motion} from 'framer-motion';
+import '../index.css';
 
 
 const About = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = React.useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 } // Trigger when 30% of the component is visible
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
 
   const numbercopyToClipboard = () => {
     const phoneNumber = "+94701942929"; // the phone number you want to copy
@@ -49,69 +74,81 @@ const About = () => {
     });
   };
 
+  
   return (
-    <div className=" border-neutral-900 px-6 lg:px-20 py-16 mb-30 lg:mb-30">
-      <h2 className="mb-12 text-center text-4xl">
-        About
-        <span className="text-neutral-500">Me</span>
-      </h2>
-      <div className="flex flex-col lg:flex-row rounded-lg backdrop-blur-sm bg-white/5 mx-0 p-8 lg:mx-36 lg:p-16">
-        <div className="basis-1/3">
-          <div className="w-full h-80">
-            <img className="rounded-lg" src={aboutImg} />
-          </div>
-        </div>
-        <div className="basis-2/3 pl-0 lg:pl-16">
-          <div className='mt-2 sm:mt-2 md:lg-4 lg:mt-0'>
-            <h1 className="font-serif text-center lg:text-left text-2xl lg:text-4xl lg:mt-0">
-              Hello! I'm Shehan Indrajith 👋
-            </h1>
-            {/* <img src={aboutImg}/> */}
-          </div >
-          <div className="mt-6">
-            <p className="font-serif text-justify">
-              I am a 22-year-old Software Engineering student passionate about
-              <label className='font-semibold border-b-2 border-indigo-500'> front-end and back-end development, cloud engineering, and Machine Learning. </label>
-              With hands-on experience in <label className='font-semibold border-b-2 border-indigo-500'> web development, IoT systems, and
-              automation</label>, I specialize in creating scalable solutions and
-              exploring AI-driven innovations like neural networks and
-              predictive analytics. Beyond tech, I channel creativity through
-              music and sports, excelling in guitar, singing, high jump, karate,
-              and badminton. A lifelong learner, I also explore Finance,
-              Economics, and Politics to broaden my perspective. I strive to
-              merge technical expertise with <label className='font-semibold border-b-2 border-indigo-500'> creativity, solving real-world
-              challenges and shaping impactful solutions </label>for the future of
-              technology.
-            </p>
-          </div>
-          <div className="flex flex-col lg:flex-row mt-6 space-x-0 lg:space-x-4">
-            <motion.div whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.99 }}
-                transition={{ type: "spring", stiffness: 300, damping: 17 }} onClick={numbercopyToClipboard} className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 mb-4 lg:mb-0 justify-start items-center hover:cursor-pointer">
-              <div className='size-12'>
-                <img src={whatsapp}/>
-              </div>
-              <div className="flex flex-col ml-4">
-                <h1 className="font-semibold">Whatsapp :</h1>
-                <h1 className="">+94 70 194 2929</h1>
-              </div>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.99 }}
-                transition={{ type: "spring", stiffness: 300, damping: 17 }} onClick={emailcopytoClipboard} className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 justify-start items-center hover:cursor-pointer">
-              <div className='size-12'>
-                <img src={gmail}/>
-              </div>
-              <div className="flex flex-col ml-4">
-                <h1 className="font-semibold">Email :</h1>
-                <h1 className="">sbsindrajith2002@gmail.com</h1>
-              </div>
-            </motion.div>
-          </div>
-        </div>
+    <div className="border-neutral-900 px-4 sm:px-6 lg:px-20 py-16 mb-12 lg:mb-30">
+  <motion.h2 className="mb-8 text-center text-white text-3xl sm:text-4xl">
+    About <span className="text-neutral-500">Me</span>
+  </motion.h2>
+  <motion.div initial={{ y: 50, opacity: 0 }} whileInView={{ y: 0, opacity: 1 , delay:0.5}} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className="flex flex-col lg:flex-row rounded-lg backdrop-blur-sm bg-white/5 mx-2 sm:mx-6 lg:mx-36 p-6 sm:p-8 lg:p-16">
+    {/* Image Section */}
+    <div className="basis-full lg:basis-1/3 mb-6 lg:mb-0">
+      <div className="w-full h-64 sm:h-80">
+        <img className="rounded-lg object-cover w-full h-full" src={aboutImg} alt="About Me" />
       </div>
-      <ToastContainer/>
     </div>
+    {/* Text Section */}
+    <div className="basis-full lg:basis-2/3 lg:pl-16">
+      <div className="mt-4 sm:mt-6 lg:mt-0">
+        <h1 className="font-serif text-center lg:text-left text-2xl sm:text-3xl lg:text-4xl">
+          Hello! I'm Shehan Indrajith 👋
+        </h1>
+      </div>
+      <div className="mt-6">
+        <p className="font-serif text-justify text-sm sm:text-base">
+          I am a 22-year-old Software Engineering student passionate about
+          <mark>front-end and back-end development</mark>, <mark>cloud engineering</mark>, and
+          <mark>Machine Learning.</mark> With hands-on experience in <mark>web development</mark>, <mark>IoT
+          systems</mark>, and <mark>automation</mark>, I specialize in creating scalable solutions
+          and exploring AI-driven innovations like neural networks and predictive
+          analytics. Beyond tech, I channel creativity through music and sports,
+          excelling in guitar, singing, high jump, karate, and badminton. A lifelong
+          learner, I also explore Finance, Economics, and Politics to broaden my
+          perspective. I strive to merge technical expertise with <mark>creativity</mark>,
+          <mark>solving real-world challenges</mark>, and <mark>shaping impactful solutions</mark> for the
+          future of technology.
+        </p>
+      </div>
+      {/* Contact Information */}
+      <div className="flex flex-col sm:flex-row mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        {/* WhatsApp */}
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: "spring", stiffness: 300, damping: 17 }}
+          onClick={numbercopyToClipboard}
+          className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 justify-start items-center hover:cursor-pointer"
+        >
+          <div className="w-8 h-8">
+            <img src={whatsapp} alt="WhatsApp" />
+          </div>
+          <div className="flex flex-col ml-4">
+            <h1 className="font-semibold text-sm sm:text-base">WhatsApp :</h1>
+            <h1 className="text-sm sm:text-base">+94 70 194 2929</h1>
+          </div>
+        </motion.div>
+        {/* Email */}
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: "spring", stiffness: 300, damping: 17 }}
+          onClick={emailcopytoClipboard}
+          className="flex flex-row rounded-lg border border-gray-700 backdrop-contrast-50 bg-black/80 p-4 justify-start items-center hover:cursor-pointer"
+        >
+          <div className="w-8 h-8">
+            <img src={gmail} alt="Gmail" />
+          </div>
+          <div className="flex flex-col ml-4">
+            <h1 className="font-semibold text-sm sm:text-base">Email :</h1>
+            <h1 className="text-sm sm:text-base">sbsindrajith2002@gmail.com</h1>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </motion.div>
+  <ToastContainer />
+</div>
+
   );
 };
 
