@@ -38,7 +38,7 @@ function socialapps() {
         url="https://www.facebook.com/profile.php?id=100090037665318"
       />
       <SocialIcon Icon={FaGithubSquare} url="https://github.com/ShehanIndrajith" />
-      <SocialIcon Icon={IoLogoLinkedin} url="www.linkedin.com/in/shehan-indrajith-47b512216" />
+      <SocialIcon Icon={IoLogoLinkedin} url="https://www.linkedin.com/in/shehan-indrajith-47b512216/" />
       <SocialIcon
         Icon={FaInstagramSquare}
         url="https://www.instagram.com/___shehanindrajith___/"

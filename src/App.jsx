@@ -3,14 +3,17 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, Element } from 'react-scroll';
 import Hero from "./components/Hero";
 import About from "./components/About";
+//import Badges from "./components/Badges";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Overveiw from "./components/overveiw";
 import Certifications from "./components/Certifications";
 import Contact from "./components/Contactme";
 import Social from "./components/socialapps";
 import Navpanel from "./components/navpanel";
+import Gallery from "./components/gallery";
 import { motion } from "framer-motion";
 
 import { FiArrowUp } from "react-icons/fi";
@@ -23,6 +26,7 @@ import InteractiveSpider from "./components/InteractiveSpider";
 function App() {
   // Refs for components
   const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
   const educationRef = useRef(null);
   const projectsRef = useRef(null);
   const certificationsRef = useRef(null);
@@ -40,6 +44,7 @@ function App() {
    useEffect(() => {
     const sections = [
       { ref: aboutRef, name: "About" },
+      { ref: experienceRef, name: "Experience" },
       { ref: educationRef, name: "Education" },
       { ref: projectsRef, name: "Projects" },
       { ref: certificationsRef, name: "Certifications" },
@@ -105,13 +110,12 @@ function App() {
       
       {/* Navigation Bar */}
       
-      <div className="fixed flex flex-row w-full justify-center items-start z-50">
+      <div className="fixed flex flex-wrap w-full flex-row justify-center items-start z-50">
         <div className="hidden md:flex">
         <Navpanel scrollToSection={scrollToSection}
-          refs={{ aboutRef, educationRef, projectsRef, certificationsRef }}
+          refs={{ aboutRef,experienceRef, educationRef, projectsRef, certificationsRef }}
           active={active}/>
         </div>
-      
       </div>
       
       
@@ -124,6 +128,9 @@ function App() {
         </div>
         
         <Skills />
+        <div ref={experienceRef}>
+        <Experience/>
+        </div>
         <div ref={educationRef}>
         <Education/>
         </div>
@@ -135,6 +142,8 @@ function App() {
         <div ref={certificationsRef}>
         <Certifications />
         </div>
+        {/* <Badges /> */}
+        <Gallery/>
         <Element name="contactMeSection">
           <Contact />
         </Element>

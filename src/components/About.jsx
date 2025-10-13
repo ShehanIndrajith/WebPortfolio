@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import aboutImg from "../assets/123.jpg";
+import aboutImg from "../assets/AboutMeImage.jpg";
 import whatsapp from "../assets/whatsapplogo.png";
 import gmail from "../assets/gmail.png";
 import { toast,ToastContainer } from "react-toastify";
@@ -96,18 +96,15 @@ const About = () => {
       </div>
       <div className="mt-6">
         <p className="font-serif text-justify text-sm sm:text-base">
-          I am a 22-year-old Software Engineering student passionate about
-          <mark>front-end and back-end development</mark>, <mark>cloud engineering</mark>, and
-          <mark>Machine Learning.</mark> With hands-on experience in <mark>web development</mark>, <mark>IoT
-          systems</mark>, and <mark>automation</mark>, I specialize in creating scalable solutions
-          and exploring AI-driven innovations like neural networks and predictive
-          analytics. Beyond tech, I channel creativity through music and sports,
-          excelling in guitar, singing, high jump, karate, and badminton. A lifelong
-          learner, I also explore Finance, Economics, and Politics to broaden my
-          perspective. I strive to merge technical expertise with <mark>creativity</mark>,
-          <mark>solving real-world challenges</mark>, and <mark>shaping impactful solutions</mark> for the
-          future of technology.
-        </p>
+  I am a <mark>23-year-old Software Engineering student</mark> who has <mark>completed my second year</mark> and gained <mark>6 months of industry experience</mark> in <mark>C#, ASP.NET, Entity Framework (EF), and LINQ</mark>. 
+  Passionate about both <mark>front-end and back-end development</mark>, 
+  I also explore <mark>cloud engineering</mark> and <mark>Machine Learning</mark>. With hands-on experience in <mark>web development</mark>, <mark>IoT systems</mark>, and <mark>automation</mark>, 
+  I focus on building <mark>scalable solutions</mark> and leveraging <mark>AI-driven innovations</mark> such as neural networks and predictive analytics. 
+  Beyond technology, I channel creativity through <mark>music</mark> and <mark>sports</mark>, excelling in guitar, singing, high jump, karate, and badminton. 
+  A lifelong learner, I continuously explore <mark>Finance</mark>, <mark>Economics</mark>, 
+  and <mark>Politics</mark> to broaden my perspective. My goal is to merge <mark>technical expertise</mark> with <mark>creativity</mark>, <mark>solve real-world challenges</mark>, and <mark>shape impactful solutions</mark> for the future of technology.
+</p>
+
       </div>
       {/* Contact Information */}
       <div className="flex flex-col sm:flex-row mt-6 space-y-4 sm:space-y-0 sm:space-x-4">

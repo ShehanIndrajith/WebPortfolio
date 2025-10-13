@@ -2,10 +2,13 @@ import project1 from "../assets/projects/Library.png";
 import project2 from "../assets/projects/gymManagement.png";
 import project3 from "../assets/projects/restaurant.png";
 import project4 from "../assets/projects/smartwatering.png";
+import Company1 from "../assets/Companies/Navitsa.jpg";
 
 import python from "../assets/certifications/pythonIntro.jpeg";
 import dsa from "../assets/certifications/dsa.png";
 import postman from "../assets/certifications/postman-certification.png"
+
+import DesCloudComputing from "../assets/Badges/describe-cloud-compute.svg";
 
 export const HERO_CONTENT = `I am a dedicated full stack developer with a strong foundation in building efficient and innovative software solutions. With hands-on experience in front-end technologies like HTML, CSS, and JavaScript, as well as back-end technologies such as Java, Spring Boot, and ASP.NET Core, I have developed a range of projects including smart IoT systems, web applications, and desktop applications. My passion for deep learning, data science, and robotics drives me to continuously explore new technologies and apply my skills to create impactful and user-centric solutions.`;
 
@@ -35,6 +38,27 @@ export const EDUCATION = [
     institute: "ESOFT Metro Campus",
     
   },
+];
+
+export const EXPERIENCE = [
+  {
+    year: "2025 March - 2025 Sep",
+    Job: ".NET Developer Intern",
+    type: "Hybrid",
+    Company: "Navitsa Technologies Pvt Ltd",
+    details: "Worked on enterprise ERP modules using C#, ASP.NET MVC/Core, Entity Framework, and LINQ. Gained hands-on experience in database design, REST APIs, report generation (RDLC/Excel), and front-end integration with JavaScript, jQuery, and DevExpress components.",
+    logo: Company1
+  }
+];
+
+export const BADGES = [
+  {
+    name: "Describe cloud computing",
+    link: "https://learn.microsoft.com/api/achievements/share/en-us/ShehanIndrajith-9613/9R83VB9U?sharingId=F5CDDBAA0F9CDD",
+    image : DesCloudComputing,
+    CompletedOn : "10/12/2025",
+    BadeFrom : "Microsoft Learn"
+  }
 ];
 
 export const PROJECTS = [

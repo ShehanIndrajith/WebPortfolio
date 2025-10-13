@@ -61,7 +61,7 @@ const Hero = () => {
               >
                 <button
                   onClick={() => {
-                    window.location.href = "https://drive.google.com/uc?export=download&id=1i2avnwgDhVVzK3QdMexUaTpOlumzNfM2";
+                    window.location.href = "https://drive.google.com/uc?export=download&id=1heX4hT5C_Zho8cE6PbP0rQrv9QUFqIwN";
                   }}
                   alt="Shehan_Indrajith_Resume.pdf"
                   className="text-sm lg:text-md text-center size-full"
