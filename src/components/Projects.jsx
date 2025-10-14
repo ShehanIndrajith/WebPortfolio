@@ -25,7 +25,7 @@ const Projects = () => {
 </div>
 
 
-<h4 className="text-center text-base sm:text-lg text-gray-400 px-4 sm:px-6 leading-relaxed">
+<h4 className="mt-2 text-center text-base sm:text-lg text-gray-400 px-4 sm:px-6 leading-relaxed">
   Showcasing my latest work and development projects
 </h4>
 </div>

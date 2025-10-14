@@ -14,7 +14,7 @@ import mysql from '../assets/mysql.png';
 
 const Skills = () => {
   return (
-    <div className='pt-8 pb-28'>
+    <div className='pt-8 pb-12'>
         <h2 className="mb-20 text-white text-center text-4xl">Skills</h2>
 
         <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1,  delay:0.5 }} transition={{ duration: 0.5, ease: "easeInOut" }} viewport={{ once: true }} className='flex flex-wrap items-center justify-center gap-4'>

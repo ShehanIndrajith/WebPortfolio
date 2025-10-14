@@ -3,6 +3,7 @@ import project2 from "../assets/projects/gymManagement.png";
 import project3 from "../assets/projects/restaurant.png";
 import project4 from "../assets/projects/smartwatering.png";
 import Company1 from "../assets/Companies/Navitsa.jpg";
+import { GraduationCapIcon, BookOpenIcon, CodeIcon, Languages } from "lucide-react";
 
 import python from "../assets/certifications/pythonIntro.jpeg";
 import dsa from "../assets/certifications/dsa.png";
@@ -16,27 +17,33 @@ export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer w
 
 export const EDUCATION = [
   {
-    year: "2023 - Present",
-    Course: "Higher Diploma in Software Engineering",
-    institute: "National Institute of Business Management",
+    duration: "2023 - 2024",
+    degree: "Higher Diploma in Software Engineering",
+    institution: "National Institute of Business Management",
+    icon: GraduationCapIcon,
+      color: "from-blue-500 to-cyan-400",
   },
   {
-    year: "2022 - 2023",
-    Course: "Diploma in Software Engineering",
-    institute: "National Institute of Business Management",
+    duration: "2022 - 2023",
+    degree: "Diploma in Software Engineering",
+    institution: "National Institute of Business Management",
+    icon: BookOpenIcon,
+    color: "from-purple-500 to-pink-400",
+  },
+  {
+    duration: "2019 Jan - 2019 May",
+    degree: "Diploma in IT",
+    institution: "ESOFT Metro Campus",
+    icon: CodeIcon,
+    color: "from-amber-500 to-orange-400",
     
   },
   {
-    year: "2019 Jan - 2019 May",
-    Course: "Diploma in IT",
-    institute: "ESOFT Metro Campus",
-    
-  },
-  {
-    year: "2019 Jan - 2019 May",
-    Course: "Diploma in English",
-    institute: "ESOFT Metro Campus",
-    
+    duration: "2019 Jan - 2019 May",
+    degree: "Diploma in English",
+    institution: "ESOFT Metro Campus",
+    icon: Languages,
+    color: "from-green-600 to-lime-500",
   },
 ];
 
