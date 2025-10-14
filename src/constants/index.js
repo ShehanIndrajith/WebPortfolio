@@ -69,6 +69,7 @@ export const PROJECTS = [
       "Developed a robust Library Management System using React and PostgreSQL, featuring efficient book tracking, user management, and seamless CRUD operations with a user-friendly interface.",
     technologies: ["React.js", "Express.js", "Node.js" ,"PostgreSQL"],
     github: "https://github.com/ShehanIndrajith/React_LibraryManagementSystem.git",
+    color: 'from-blue-500 to-indigo-600'
   },
   {
     title: "Gym Membership Management System ",
@@ -77,6 +78,7 @@ export const PROJECTS = [
       "The Gym Membership Management system, built with ASP.NET Core MVC and SQL Server, enables CRUD operations for efficient member registration and membership plan management. ",
     technologies: ["C#", "ASP.NET core", "SQL"],
     github: "https://github.com/ShehanIndrajith/GymManagementSystem.git",
+    color: 'from-purple-500 to-pink-500'
   },
   {
     title: "Restaurant Food Ordering System",
@@ -85,6 +87,7 @@ export const PROJECTS = [
       "This restaurant management system allows customers to view the menu and place orders, while the admin can add, delete, and update food items. Additionally, the admin can access the order history.",
     technologies: ["C#", "Windows Form", "SQL"],
     github: "https://github.com/ShehanIndrajith/Restaurant_Food_Odering_System.git",
+    color: 'from-green-500 to-emerald-500'
   },
   {
     title: "Smart Plant Watering System",
@@ -93,26 +96,42 @@ export const PROJECTS = [
       "Developed a smart agriculture irrigation system using IoT technology to automate soil moisture monitoring and regulation, enabling real-time data access and remote control for improved plant health and efficiency. ",
     technologies: ["Arduino", "Firebase", "Soil Moisture Sensors", "NodeMCU module"],
     github: "https://github.com/ShehanIndrajith/PlantWateringSystem.git",
+    color: 'from-red-500 to-orange-500'
   },
 ];
 
 export const CERTIFICATES = [
   {
-    title: "Introduction to Python",
-    image: python,
-    institute: "by Sololearn",
-    date:"24/09/2023",
-  },
-  {
-    title: "Basics of Data Structures and Algorithms",
-    image: dsa,
-    institute: "by Simplilearn",
-    date: "14/07/2024",
-  },
-  {
-    title: "Postman API Fundamentals Student Expert",
-    image: postman,
-    institute: "by Postman",
-    date: "19/05/2024",
+  title: "Introduction to Python",
+  image: python,
+  link: "https://media.licdn.com/dms/image/v2/D5622AQG5i_ogZ0XqhA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1695565670688?e=1763596800&v=beta&t=WIMQuIxzM-x8xXve3PV3Vr5iIBu2QsI5nMJDzErZ7LQ",
+  institute: "by Sololearn",
+  date: "24/09/2023",
+  skills: ["Python", "Programming Fundamentals", "Problem Solving", "Syntax & Data Types"]
+},
+{
+  title: "Basics of Data Structures and Algorithms",
+  image: dsa,
+  link: "https://certificates.simplicdn.net/share/thumb_6927798_1720942147.png",
+  institute: "by Simplilearn",
+  date: "14/07/2024",
+  skills: ["Data Structures", "Algorithms", "Time Complexity", "Optimization"]
+},
+{
+  title: "Postman API Fundamentals Student Expert",
+  image: postman,
+  link: "https://media.licdn.com/dms/image/v2/D562DAQFmRQimXbJr2g/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1716263216792?e=1761033600&v=beta&t=Ls2Ro58waa21WBA-5v2YlIGbht_FusII_M5Ng7_zrbE",
+  institute: "by Postman",
+  date: "19/05/2024",
+  skills: ["API Testing", "RESTful APIs", "Postman Collections", "Automation"]
+},
+{
+    title: "Describe cloud computing",
+    link: "https://learn.microsoft.com/api/achievements/share/en-us/ShehanIndrajith-9613/9R83VB9U?sharingId=F5CDDBAA0F9CDD",
+    image : DesCloudComputing,
+    date : "10/12/2025",
+    institute : "Microsoft Learn",
+    skills: ["Cloud Concepts","shared responsibility model", "Cloud Models"]
   }
+
 ];

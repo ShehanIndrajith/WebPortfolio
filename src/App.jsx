@@ -14,16 +14,19 @@ import Contact from "./components/Contactme";
 import Social from "./components/socialapps";
 import Navpanel from "./components/navpanel";
 import Gallery from "./components/gallery";
-import { motion } from "framer-motion";
+import { LoadingIntro } from "./components/LoadingIntro";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { FiArrowUp } from "react-icons/fi";
 
 
 
 //import StarryBackground from './components/StarryBackground';
-import InteractiveSpider from "./components/InteractiveSpider";
+//import InteractiveSpider from "./components/InteractiveSpider";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true)
+  
   // Refs for components
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
@@ -102,21 +105,31 @@ function App() {
   return (
     
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
-      <div className="fixed top-0 -z-50 h-full w-full">
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-          <InteractiveSpider />
-        </div>
+      <AnimatePresence mode="wait">
+    {isLoading ? (
+      <LoadingIntro onComplete={() => setIsLoading(false)} />
+    ) : null}
+  </AnimatePresence>
+
+  {/* Background */}
+  <div className="fixed top-0 -z-50 h-full w-full">
+    <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+      {/* <InteractiveSpider /> */}
+    </div>
+  </div>
+
+  {/* Navigation Bar - only show after loading */}
+  {!isLoading && (
+    <div className="fixed flex flex-wrap w-full flex-row justify-center items-start z-50">
+      <div className="hidden md:flex">
+        <Navpanel
+          scrollToSection={scrollToSection}
+          refs={{ aboutRef, experienceRef, educationRef, projectsRef, certificationsRef }}
+          active={active}
+        />
       </div>
-      
-      {/* Navigation Bar */}
-      
-      <div className="fixed flex flex-wrap w-full flex-row justify-center items-start z-50">
-        <div className="hidden md:flex">
-        <Navpanel scrollToSection={scrollToSection}
-          refs={{ aboutRef,experienceRef, educationRef, projectsRef, certificationsRef }}
-          active={active}/>
-        </div>
-      </div>
+    </div>
+  )}
       
       
 
