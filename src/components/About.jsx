@@ -55,7 +55,7 @@ const About = () => {
   };
 
   const emailcopytoClipboard = () => {
-    const emailAddress = "sbsindrajith2002@gmail.com";
+    const emailAddress = "shehanindrajith06@gmail.com";
     navigator.clipboard.writeText(emailAddress)
     .then(() => {
       toast.success('Email Address copied to clipboard!', {
@@ -137,7 +137,7 @@ const About = () => {
           </div>
           <div className="flex flex-col ml-4">
             <h1 className="font-semibold text-sm sm:text-base">Email :</h1>
-            <h1 className="text-sm sm:text-base">sbsindrajith2002@gmail.com</h1>
+            <h1 className="text-sm sm:text-base">shehanindrajith06@gmail.com</h1>
           </div>
         </motion.div>
       </div>
