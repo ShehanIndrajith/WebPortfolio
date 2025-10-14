@@ -6,7 +6,7 @@ const Experience = () => {
 
     
   return (
-    <div className="flex flex-col justify-center border-b border-neutral-800 pb-32 px-2 sm:px-6 lg:px-36">
+    <div className="flex flex-col justify-center border-b border-neutral-800 pb-12 px-2 sm:px-6 lg:px-36">
   {/* Section Title */}
   <h2 className="my-12 sm:my-20 text-center text-white text-3xl sm:text-4xl">Experience</h2>
 

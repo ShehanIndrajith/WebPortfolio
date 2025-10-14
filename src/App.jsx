@@ -5,7 +5,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 //import Badges from "./components/Badges";
 import Skills from "./components/Skills";
-import Education from "./components/Education";
+import { Education } from './components/Education.jsx';
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Overveiw from "./components/overveiw";
@@ -14,6 +14,7 @@ import Contact from "./components/Contactme";
 import Social from "./components/socialapps";
 import Navpanel from "./components/navpanel";
 import Gallery from "./components/gallery";
+import { CursorEffect } from "./components/CursorEffect";
 import { LoadingIntro } from "./components/LoadingIntro";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -40,38 +41,45 @@ function App() {
   };
 
   useEffect(() => {
-    const sections = [
-      { ref: aboutRef, name: "About" },
-      { ref: experienceRef, name: "Experience" },
-      { ref: educationRef, name: "Education" },
-      { ref: projectsRef, name: "Projects" },
-      { ref: certificationsRef, name: "Certifications" },
-    ];
+  const sections = [
+    { ref: aboutRef, name: "About" },
+    { ref: experienceRef, name: "Experience" },
+    { ref: educationRef, name: "Education" },
+    { ref: projectsRef, name: "Projects" },
+    { ref: certificationsRef, name: "Certifications" },
+  ];
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.dataset.name);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+  const handleScroll = () => {
+    const scrollPos = window.scrollY + window.innerHeight / 3; // middle of screen
+    let currentSection = "Home"; // default if above first section
 
-    sections.forEach((section) => {
-      if (section.ref.current) {
-        section.ref.current.dataset.name = section.name;
-        observer.observe(section.ref.current);
+    for (let i = 0; i < sections.length; i++) {
+      const sectionEl = sections[i].ref.current;
+      if (!sectionEl) continue; // skip if null
+      const sectionTop = sectionEl.offsetTop;
+      const sectionHeight = sectionEl.offsetHeight;
+
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        currentSection = sections[i].name;
+        break;
       }
-    });
+    }
 
-    return () => {
-      sections.forEach((section) => {
-        if (section.ref.current) observer.unobserve(section.ref.current);
-      });
-    };
-  }, []);
+    setActive(currentSection);
+  };
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll); // recalc on resize
+  handleScroll(); // initial check
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
+  };
+}, []);
+
+
+
 
   let calcScrollValue = () => {
     let scrollProgress = document.getElementById("progress");
@@ -104,6 +112,7 @@ function App() {
           <LoadingIntro onComplete={() => setIsLoading(false)} />
         ) : (
           <>
+          <CursorEffect />
             {/* Background */}
             <div className="fixed top-0 -z-50 h-full w-full">
               <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
