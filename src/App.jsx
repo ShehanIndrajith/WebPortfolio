@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 //import {Navbar}  from "./components/Navbar"
 import { Link, Element } from 'react-scroll';
+import Particles from './Particles.jsx';
 import Hero from "./components/Hero";
 import About from "./components/About";
 //import Badges from "./components/Badges";
@@ -107,6 +108,7 @@ function App() {
 
   return (
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
+
       <AnimatePresence mode="wait">
         {isLoading ? (
           <LoadingIntro onComplete={() => setIsLoading(false)} />
@@ -115,7 +117,21 @@ function App() {
           <CursorEffect />
             {/* Background */}
             <div className="fixed top-0 -z-50 h-full w-full">
-              <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+              <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" >
+                <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+  <Particles
+    particleColors={['#ffffff', '#ffffff']}
+    particleCount={200}
+    particleSpread={10}
+    speed={0.1}
+    particleBaseSize={100}
+    moveParticlesOnHover={true}
+    alphaParticles={false}
+    disableRotation={false}
+  />
+</div>
+              </div>
+              
             </div>
 
             {/* Navigation Bar */}
