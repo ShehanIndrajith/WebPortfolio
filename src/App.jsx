@@ -25,26 +25,21 @@ import { FiArrowUp } from "react-icons/fi";
 //import InteractiveSpider from "./components/InteractiveSpider";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-  
-  // Refs for components
+  const [isLoading, setIsLoading] = useState(true);
+
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
   const projectsRef = useRef(null);
   const certificationsRef = useRef(null);
-
-  // Active button state
   const [active, setActive] = useState("");
 
-  // Scroll function
   const scrollToSection = (ref, sectionName) => {
-    setActive(sectionName); // Set active button
-    ref.current.scrollIntoView({ behavior: "smooth" }); // Smooth scroll
+    setActive(sectionName);
+    ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
-   // Use Intersection Observer to track visibility
-   useEffect(() => {
+  useEffect(() => {
     const sections = [
       { ref: aboutRef, name: "About" },
       { ref: experienceRef, name: "Experience" },
@@ -61,7 +56,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 60% of the section is visible
+      { threshold: 0.3 }
     );
 
     sections.forEach((section) => {
@@ -103,82 +98,83 @@ function App() {
   window.onload = calcScrollValue;
 
   return (
-    
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
       <AnimatePresence mode="wait">
-    {isLoading ? (
-      <LoadingIntro onComplete={() => setIsLoading(false)} />
-    ) : null}
-  </AnimatePresence>
+        {isLoading ? (
+          <LoadingIntro onComplete={() => setIsLoading(false)} />
+        ) : (
+          <>
+            {/* Background */}
+            <div className="fixed top-0 -z-50 h-full w-full">
+              <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+            </div>
 
-  {/* Background */}
-  <div className="fixed top-0 -z-50 h-full w-full">
-    <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      {/* <InteractiveSpider /> */}
-    </div>
-  </div>
+            {/* Navigation Bar */}
+            <div className="fixed flex flex-wrap w-full flex-row justify-center items-start z-50">
+              <div className="hidden md:flex">
+                <Navpanel
+                  scrollToSection={scrollToSection}
+                  refs={{
+                    aboutRef,
+                    experienceRef,
+                    educationRef,
+                    projectsRef,
+                    certificationsRef,
+                  }}
+                  active={active}
+                />
+              </div>
+            </div>
 
-  {/* Navigation Bar - only show after loading */}
-  {!isLoading && (
-    <div className="fixed flex flex-wrap w-full flex-row justify-center items-start z-50">
-      <div className="hidden md:flex">
-        <Navpanel
-          scrollToSection={scrollToSection}
-          refs={{ aboutRef, experienceRef, educationRef, projectsRef, certificationsRef }}
-          active={active}
-        />
-      </div>
-    </div>
-  )}
-      
-      
+            {/* Main Content */}
+            <div className="flex flex-col mx-auto pt-16 lg:pt-40">
+              <Hero />
+              <div ref={aboutRef}>
+                <About />
+              </div>
+              <Skills />
+              <div ref={experienceRef}>
+                <Experience />
+              </div>
+              <div ref={educationRef}>
+                <Education />
+              </div>
+              <div ref={projectsRef}>
+                <Projects />
+              </div>
+              <Overveiw />
+              <div ref={certificationsRef}>
+                <Certifications />
+              </div>
+              <Gallery />
+              <Element name="contactMeSection">
+                <Contact />
+              </Element>
+            </div>
 
-      {/* Main Content */}
-      <div className="flex flex-col mx-auto pt-16 lg:pt-40">
-        <Hero />
-        <div ref={aboutRef}>
-        <About />
-        </div>
-        
-        <Skills />
-        <div ref={experienceRef}>
-        <Experience/>
-        </div>
-        <div ref={educationRef}>
-        <Education/>
-        </div>
-        <div ref={projectsRef}>
-        <Projects />
-        </div>
-        
-        <Overveiw />
-        <div ref={certificationsRef}>
-        <Certifications />
-        </div>
-        {/* <Badges /> */}
-        <Gallery/>
-        <Element name="contactMeSection">
-          <Contact />
-        </Element>
-        
-      </div>
+            {/* Scroll Progress */}
+            <motion.div
+              whileHover={{ y: -8 }}
+              initial={{ x: 10, opacity: 0 }}
+              animate={{ x: 1, opacity: 1 }}
+              exit={{ x: 20, duration: 5 }}
+              id="progress"
+            >
+              <span id="progress-value">
+                <FiArrowUp className="size-8" />
+              </span>
+            </motion.div>
 
-      
-     
-
-      {/* Scroll Progress */}
-      <motion.div whileHover={{y:-8}} initial={{ x: 10, opacity: 0 }} animate={{ x: 1, opacity: 1 }} exit={{ x: 20 , duration: 5 }}  id="progress">
-        <span id="progress-value">
-          <FiArrowUp className="size-8" />
-        </span>
-      </motion.div>
-
-       {/* fixed left-2 top-1/4 transform -translate-y-1/2 */}
-       <div className="fixed left-2 top-1/4 transform -translate-y-1/2">
-        <Social />
-      </div>
+            {/* Social Links */}
+            <div className="fixed left-2 top-1/4 transform -translate-y-1/2">
+              <Social />
+            </div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
 export default App;
+
