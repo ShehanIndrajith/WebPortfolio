@@ -49,13 +49,16 @@ export const EDUCATION = [
 
 export const EXPERIENCE = [
   {
-    year: "2025 March - 2025 Sep",
-    Job: ".NET Developer Intern",
+    startDate: 'March 2025',
+    endDate: 'Sep 2025',
+    position: ".NET Developer Intern",
     type: "Hybrid",
-    Company: "Navitsa Technologies Pvt Ltd",
-    details: "Worked on enterprise ERP modules using C#, ASP.NET MVC/Core, Entity Framework, and LINQ. Gained hands-on experience in database design, REST APIs, report generation (RDLC/Excel), and front-end integration with JavaScript, jQuery, and DevExpress components.",
-    logo: Company1
-  }
+    company: "Navitsa Technologies Pvt Ltd",
+    description: "Worked on enterprise ERP modules using C#, ASP.NET MVC/Core, Entity Framework, and LINQ. Gained hands-on experience in database design, REST APIs, report generation (RDLC/Excel), and front-end integration with JavaScript, jQuery, and DevExpress components.",
+    logo: Company1,
+    color: 'from-blue-500 to-cyan-400',
+  },
+  
 ];
 
 export const BADGES = [

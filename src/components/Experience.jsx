@@ -1,51 +1,69 @@
 import React from 'react'
 import {EXPERIENCE} from '../constants';
 import { motion } from "framer-motion";
+import { BriefcaseIcon } from 'lucide-react'
+import { ExperienceCard } from './ExperienceCard'
 
-const Experience = () => {
+export function Experience() {
+  
 
-    
   return (
-    <div className="flex flex-col justify-center border-b border-neutral-800 pb-12 px-2 sm:px-6 lg:px-36">
-  {/* Section Title */}
-  <h2 className="my-12 sm:my-20 text-center text-white text-3xl sm:text-4xl">Experience</h2>
-
-  {/* Experience List */}
-  <div className="flex flex-col gap-10 sm:gap-16 items-center bg-white/5 backdrop-blur-sm py-6 sm:py-10 px-2 sm:px-6 rounded-lg w-full">
-    {EXPERIENCE.map((experience, index) => (
+    <section className="max-w-6xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
       <motion.div
-        key={index}
-        initial={{ y: 30, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        viewport={{ once: true }}
-        className="flex flex-col lg:flex-row items-center gap-6 lg:gap-16 w-full max-w-4xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-center mb-16"
       >
-        {/* Left: Logo */}
-        <div className="flex-shrink-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 flex justify-center">
-          <img
-            className="rounded-lg shadow-lg w-full h-full object-contain bg-white p-2"
-            src={experience.logo}
-            alt={experience.Company}
-          />
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <BriefcaseIcon className="w-6 h-6 text-blue-400" />
+          <h2 className="text-3xl md:text-4xl font-bold">
+            <span className="inline-block relative">
+              Professional Experience
+              <motion.span
+                className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-cyan-500"
+                initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                transition={{ delay: 0.3, duration: 0.5 }}
+              ></motion.span>
+            </span>
+          </h2>
         </div>
-
-        {/* Right: Details */}
-        <div className="flex flex-col text-center lg:text-left text-white text-neutral-300 max-w-2xl">
-          <p className="text-sm text-cyan-400">{experience.year}</p>
-          <p className="text-lg sm:text-xl font-bold mt-1">{experience.Job}</p>
-          <p className="text-base mt-1">{experience.Company}</p>
-          <p className="text-sm text-neutral-400 mt-1">Type: {experience.type}</p>
-          <p className="mt-2 sm:mt-3 text-neutral-400 text-justify leading-relaxed">
-            {experience.details}
-          </p>
-        </div>
+        <p className="text-slate-300 max-w-2xl mx-auto text-lg">
+          My journey through the tech industry and the roles that shaped my
+          expertise
+        </p>
       </motion.div>
-    ))}
-  </div>
-</div>
 
+      <div className="relative">
+        {/* Timeline line */}
+        <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block"></div>
+
+        <div className="space-y-12">
+          {EXPERIENCE.map((experience, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className={`relative flex flex-col ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              }`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full bg-slate-800 border-4 border-blue-500 hidden md:block"></div>
+
+              {/* Content */}
+              <div className="md:w-1/2 md:px-10">
+                <ExperienceCard
+                  experience={experience}
+                  isEven={index % 2 === 0}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
-
-export default Experience

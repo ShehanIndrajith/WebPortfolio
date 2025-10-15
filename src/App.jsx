@@ -7,7 +7,7 @@ import About from "./components/About";
 //import Badges from "./components/Badges";
 import Skills from "./components/Skills";
 import { Education } from './components/Education.jsx';
-import Experience from "./components/Experience";
+import {Experience} from "./components/Experience";
 import Projects from "./components/Projects";
 import Overveiw from "./components/overveiw";
 import Certifications from "./components/Certifications";
