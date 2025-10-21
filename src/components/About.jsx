@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import aboutImg from "../assets/AboutMeImage.jpg";
+import aboutImg from "../assets/Shehan Indrajith Image.png";
 import whatsapp from "../assets/whatsapplogo.png";
 import gmail from "../assets/gmail.png";
 import { toast,ToastContainer } from "react-toastify";
